@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="MainMPSITE.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <script>
+        setInterval(Time, 100);
+        function Time() {
+            const date = new Date();
+            var minutes;
+            timeDateDay = date.getDate();
+            timeDateMonth =  (date.getMonth()+1);
+            timeDateYear = date.getFullYear();
+            if (date.getMinutes() < 10) minutes = "0" + date.getMinutes();
+            else minutes = date.getMinutes();
+            timeHour = date.getHours() + ":" + minutes + ":" + date.getSeconds();
+            document.getElementById("MtimeDateDay").innerHTML = timeDateDay;
+            document.getElementById("MtimeDateMonth").innerHTML = timeDateMonth;
+            document.getElementById("MtimeDateYear").innerHTML = timeDateYear;
+            document.getElementById("MtimeHour").innerHTML = timeHour;
+        }
+    </script>
+    
+    <link href="css/master.css" rel="stylesheet" />
+    <title>What is this?</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div>
+            <table class="Mtable">
+                <tr style="margin:auto;">
+                    <td style="text-align:center; margin:auto; padding:5px;" class="MtimeDate">
+                        <div id="Mdate"><div id="MtimeDateDay"></div>/<div id="MtimeDateMonth"></div>/<div id="MtimeDateYear"></div></div>
+                        <br /><a id="MtimeHour"></a></td>
+                    <td><header>Michael Hazan</header></td>
+                    <td >
+                        <%= loginMSG %>
+                        <%if ((string)Session["uName"] == "guest") { %>
+                        <div style="text-align:center;">
+                            <a href="SignUp.aspx" class="MsignButton"> Sign Up </a>
+                            <br /><br />
+                            <a href="SignIn.aspx" class="MsignButton"> Sign In </a>
+                        </div>
+                        <%} else { %>
+                            <a href="LogOut.aspx" class="MsignButton"> Log Out </a>
+                        <%} %>
+                    </td>
+                </tr>
+                <tr><td colspan="3">
+                        <ul class="MPagesList">
+                            <li><a href="main.aspx">Home</a></li>
+                            <li><a href="calculations.aspx">Calculate</a></li>
+                            <li><a href="hoursTable.aspx">Hours Table</a></li>
+                            <li><a href="imageTable.aspx">Images</a></li>
+                        </ul>
+                </td></tr>
+                <tr><td colspan="3">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td></tr>
+            </table>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿table, tr, td {
+    border: 3px solid red;
+    text-align: center;
+    border-spacing: 0px;
+}
+
+table {
+    border: 0px;
+    margin: auto;
+    width: 55%;
+    height: 500px;
+}
+
+tr {
+    margin: 0px;
+    padding: 0px;
+}
+
+img.tdata {
+    display: block;
+    width: 100%;
+}

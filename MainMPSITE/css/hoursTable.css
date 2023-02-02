@@ -1,0 +1,69 @@
+﻿table.Hours {
+    width: 45%;
+    margin: 10px auto;
+    border: 5px solid brown;
+    border-spacing: 0px 0px;
+}
+table.Hours tr {
+    border-spacing: 0px 0px;
+}
+table.Hours td {
+    color: black;
+    padding: 5px;
+    border: 5px solid brown;
+    font-size: 25px;
+    text-align: center;
+    border-spacing: 0px 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: box-shadow 1s;
+}
+
+table.Hours td:hover {
+    box-shadow: inset 10px 10px 3px rgba(0,0,0, 0.4);
+}
+
+td.empty{
+    background-color:black;
+}
+td.break{
+    background-color:yellow;
+}
+td.math{
+    background-color:lightpink;
+}
+td.pe{
+    background-color: coral;
+}
+td.agri{
+    background-color:forestgreen;
+}
+td.torah{
+    background-color:dodgerblue;
+}
+td.expan{
+    background-color:burlywood;
+}
+td.farm{
+    background-color:lightgreen;
+}
+td.citizen{
+    background-color:lightsteelblue;
+}
+td.english{
+    background-color:olivedrab;
+}
+td.education{
+    background-color:wheat;
+}
+
+
+
+@keyframes Hover {
+    0% {
+        box-shadow: 0px 0px rgba(0,0,0, 0.4);
+    }
+    100% {
+        box-shadow: 10px 10px 3px rgba(0,0,0, 0.4);
+        background-color:antiquewhite;
+    }
+}
