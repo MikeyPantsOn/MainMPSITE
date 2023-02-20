@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="MainMPSITE.SignUp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
         .signupform{
             font-family: 'Roboto', sans-serif;
+
             margin:auto; 
             margin-top:20px;
             width:fit-content;
@@ -14,8 +14,11 @@
             text-align:center;
             border-spacing: 5px 10px;
             background: rgb(130,0,57);
-            background: radial-gradient(circle, rgba(130,0,57,0.7) 0%, rgba(0,58,125,0.7) 100%);
+            background: radial-gradient(circle, rgba(130,0,57,0.95) 0%, rgba(0,58,125,0.2) 90%);
+            background-size: 100% 100%;
             border-radius: 2px 4px;
+            padding:20px;
+            box-shadow: rgba(0,0,0, 0.4) 10px 10px 20px inset;
         }
         .signupform input[type=submit] {
             width: 100%;
@@ -27,6 +30,11 @@
             border-radius: 4px;
             cursor: pointer;
             text-align:center;
+            transition: background-color cubic-bezier(.75,.05,.51,1.06) 0.5s, color linear 0.5s;
+        }
+        .signupform input[type=submit]:hover {
+            background-color: white;
+            color: #4CAF50;
         }
         .signupform input[type=password], .signupform input[type=text]{
             width: 100%;
@@ -42,13 +50,19 @@
             background: rgb(255,231,242);
             background: radial-gradient(circle, rgba(255,231,242,1) 0%, rgba(224,227,255,1) 100%);
         }
+
         select.yob {
             width:80px;
             text-align:center;
             font-size:24px;
-            font-family: 'Roboto';
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 60px;
+            position:absolute;
+            margin-left:10px;
         }
-
+        select.yob option:hover {
+            background: rgb(134, 134, 134);
+        }
         .ErrMSG {
             font-size:14px;
         }
@@ -56,7 +70,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form method="post" runat="server">
-        <table class="signupform">
+
+        <table class="signupform fancyshadow">
+            
             <tr>
                 <td></td>
                 <td colspan="2">Username:<br /><input type="text" name="uName" id="uName"  /></td>
@@ -88,7 +104,7 @@
             <tr>
                 <td></td>
                 <td colspan="2">Year Of Birth:
-                    <select class="yob" name="yob" id="yob">
+                    <select class="yob" name="yob" id="yob" onmouseover="this.size=8;" onmouseout="this.size=0;" onclick="this.size=0;">
                         <%= yearOptions %>
                     </select>
                 </td>

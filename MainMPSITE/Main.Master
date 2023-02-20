@@ -67,12 +67,12 @@
         <div>
             <table class="Mtable">
                 <tr style="margin:auto;">
-                    <td style="text-align:center; margin:auto; width:120px;" class="MtimeDate">
+                    <td style="width:20px;"></td>
+                    <td class="MtimeDate">
                         <div id="Mdate"><div id="MtimeDateDay"></div>/<div id="MtimeDateMonth"></div>/<div id="MtimeDateYear"></div></div>
                         <br /><a id="MtimeHour"></a></td>
                     <td><header>Michael Hazan</header></td>
-                    <td style="text-align:center;width:120px;">
-                        
+                    <td class="MLogin">
                         <%if ((string)Session["uName"] == "guest") { %>
                         <div style="text-align:center;">
                             <a href="SignUp.aspx" class="MsignButton"> Sign Up </a>
@@ -84,6 +84,7 @@
                             <a href="SignOut.aspx" class="MsignButton"> Log Out </a>
                         <%} %>
                     </td>
+                    <td style="width:20px;"></td>
                 </tr>
                 <tr><td colspan="4">
                         <ul class="MPagesList">
@@ -93,7 +94,7 @@
                             <li><a href="imageTable.aspx">Images</a></li>
                         </ul>
                 </td></tr>
-                <tr><td colspan="3">
+                <tr><td colspan="10">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </td></tr>

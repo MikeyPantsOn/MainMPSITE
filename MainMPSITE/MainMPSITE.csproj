@@ -100,6 +100,7 @@
     <Content Include="js\index.js" />
     <Content Include="main.aspx" />
     <Content Include="SignIn.aspx" />
+    <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="SignIn.aspx.designer.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignOut.aspx.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignOut.aspx.designer.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>

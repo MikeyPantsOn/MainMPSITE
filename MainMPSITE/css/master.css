@@ -10,13 +10,26 @@ body, html {
     padding: 0;
 
 }
-
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px 4px;
+    margin: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 3px 3px;
+    margin:10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
 svg {
     width: 100%;
-    position:absolute;
-    left:0;
-    top:0;
-    z-index:-10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
 }
 
 table.Mtable{
@@ -32,9 +45,12 @@ table.Mtable{
 }
 
 .MtimeDate {
-    background: rgb(35, 35, 35);
+    background: rgba(0,12,73,1);
     padding: 10px;
     text-align: center;
+    margin: auto;
+    width: 100px;
+    box-shadow: rgb(68 0 121) 10px 10px 15px inset, rgb(68 0 121) -10px -10px 15px inset, rgb(68 0 121) 0px 6px 15px;
 }
 
 #MtimeDateYear {
@@ -72,20 +88,31 @@ table.Mtable header:hover{
     text-shadow: 4px 4px 2px blue, 8px 8px 3px pink;
     cursor:pointer;
 }
+td.MLogin {
+    text-align: center;
+    width: 100px;
+    background: rgb(2,0,36);
+    background: linear-gradient(48deg, rgba(2,0,36,0.25) 6%, rgba(9,9,121,0.2) 48%, rgba(0,212,255,0.1) 100%);
+    border-radius: 6px 8px;
+    box-shadow: rgb(68 0 121) 0px 4px 20px;
+    
+}
 
 .MsignButton {
     font-size: 22px;
     cursor: pointer;
     user-select: none;
-    transition: background linear 0.3s;
-    padding: 10px;
+    transition: box-shadow linear 0.3s;
     text-align: center;
     border-radius: 3px 4px;
     text-decoration: none;
+    padding:1px;
     color: rgba(255, 167, 245, 0.75);
+
 }
 .MsignButton:hover {
-    background: rgb(35, 35, 35);
+    box-shadow: rgba(0,0,0, 0.8) 3px 3px 10px;
+    
 }
 
 ul.MPagesList {

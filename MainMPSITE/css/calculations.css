@@ -33,6 +33,8 @@ div.calculations {
     width: fit-content;
     margin: auto;
     margin-top: 20px;
+    overflow-y: scroll;
+    height: 24em;
 }
 
 div.calculation {

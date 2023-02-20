@@ -51,12 +51,16 @@ namespace MainMPSITE
             if (pass == null || pass.Length < 8 || pass != passc) { passErr = "Password too short or don't match."; return; }
 
             sqlInsert = $"INSERT INTO {tableName} ";
-            sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFName"]}' , '{Request.Form["userLName"]}' , '{email}' , '{Request.Form["gender"]}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}')";
+            sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFName"]}' , '{Request.Form["userLName"]}' , '{email}' , " +
+                $"'{Request.Form["gender"]}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}', 'F')";
 
             Helper.DoQuery(fileName, sqlInsert);
 
+            Session["uName"] = uName;
+            Session["userFName"] = Request.Form["userFName"];
             Response.Redirect("main.aspx");
             
+
         }
 
         private void YearPlacement()
