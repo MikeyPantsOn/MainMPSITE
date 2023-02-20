@@ -9,6 +9,7 @@ table.Mtable{
     margin:auto;
     margin-top:40px;
     width:100%;
+    border-collapse:collapse;
 }
 
 .MMSG {

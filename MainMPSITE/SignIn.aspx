@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="MainMPSITE.SignIn" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
     <style>
+        .errMSG{
+            font-size:14px;
+        }
         .loginform{
             margin:auto; 
             width:fit-content;
@@ -27,16 +30,37 @@
             box-sizing: border-box;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            LoadInputs();
+        }, false);
+        function SaveInputs() {
+            var username = document.getElementById("uName").value;
+            localStorage.setItem("username", username);
+            console.log(localStorage.getItem("username"));
+            console.log("hellooo");
+        }
+        function LoadInputs() {
+            console.log(localStorage.getItem("username"));
+            document.getElementById("uName").value = localStorage.getItem("username");
+            
+        }
+        
+    </script>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form name="loginFrm" id="loginFrm" method="post" runat="server">
+    <form name="loginFrm" id="loginFrm" onSubmit="return SaveInputs()" method="post" runat="server">
         <br /><br /><br />
-        <div class="loginform">
+        
+        <div class="loginform" >
             <div>Username: </div>
-            <div><input type="text" name="uName" id="uName"  /></div>
+            <div><input type="text" name="uName" id="uName" placeholder="Username"/></div>
+            <div class="errMSG"><%= UserMsg %></div>
             <div>Password: </div>
-            <div><input type="password" name="pw" id="pw"  /></div>
+            <div><input type="password" name="pw" id="pw" /></div>
+            <div class="errMSG"><%= PassMsg %></div>
             <br />
+            <div class="errMSG"><%= msg %></div>
             <div>
                 <input type="submit" name="submit" value="Login" />
             </div>

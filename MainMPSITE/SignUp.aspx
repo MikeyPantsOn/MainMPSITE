@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <style>
+        td {
+            text-align:center;
+        }
         .signupform{
             margin:auto; 
             width:fit-content;
@@ -22,9 +25,8 @@
             text-align:center;
         }
         .signupform input[type=password], .signupform input[type=text]{
-            width: 100%;
+            width: 80%;
             padding: 12px 20px;
-            margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -43,33 +45,70 @@
     <form name="signupFrm" id="signupFrm" method="post" runat="server">
         <table class="signupform">
             <tr>
-                <td colspan=2>Username:</td>
-                <td colspan=2><input type="text" name="uName" id="uName"  /></td>
+                <td></td>
+                <td colspan=2>Username:<br /><input type="text" name="uName" id="uName"  /></td>
+                <td></td>
+
             </tr>
             <tr>
-                <td colspan=2>Password:</td>
-                <td colspan=2><input type="text" name="password" id="password"  /></td>
+                <td></td>
+
+                <td colspan=2>Password:<br /><input type="password" name="password" id="password"/></td>
+                <td></td>
+
             </tr>
             <tr>
-                <td>First Name:</td>
-                <td><input type="text" name="userFName" id="userFName"  /></td>
-                <td>Last Name:</td>
-                <td><input type="text" name="userLName" id="userLname"  /></td>
+                <td></td>
+
+                <td colspan=2>Email: <br /><input type="text" name="email" id="Email"/></td>
+                <td></td>
+  
+            </tr>
+            <tr>
+                <td></td>
+
+                <td colspan="2">First Name:<br /> <input type="text" name="userFName" id="userFName"  /><br />Last Name: <input type="text" name="userLName" id="userLname"  /></td>
+                <td></td>
+
             </tr>   
             <tr>
-                <td colspan=2>Year Of Birth:</td>
-                <td>
-                    <select class="yob" name="yearOfBirth" id="yob">
+                <td></td>
+
+                <td colspan=2>Year Of Birth:
+
+                    <select class="yob" name="yob" id="yob">
                         <%= yearOptions %>
                     </select>
                 </td>
+                <td></td>
                 
             </tr>
             <tr>
-                <td colspan=2>Password:</td>
-                <td colspan=2><input type="text" name="password" id="password"  /></td>
+                <td></td>
+
+                <td colspan=2>Gender:
+                    <input type="radio" value="Male" name="gender" id="m"/>
+                    <label for="m">Male</label>
+
+                    <input type="radio" value="Female" name="gender" id="f"/>
+                    <label for="f">Female</label>
+                </td>
+                <td></td>
+
             </tr>
-            
+            <tr>
+                <td></td>
+                <td colspan=2>Phone Number:<br /><input type="text" name="phoneNumber" id="phoneNumber"/></td>
+                <td></td>
+            </tr>
+            <tr><td colspan="4"><%= msg %></td></tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Sign Up" />
+                </td>
+                <td></td>
+            </tr>            
         </table>
     </form>
 </asp:Content>
