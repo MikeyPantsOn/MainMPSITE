@@ -67,21 +67,12 @@
         <div>
             <table class="Mtable">
                 <tr style="margin:auto;">
-<<<<<<< HEAD
-                    <td style="text-align:center; width:180px; margin:auto; padding:5px;" class="MtimeDate">
-                        <div id="Mdate"><div id="MtimeDateDay"></div>/<div id="MtimeDateMonth"></div>/<div id="MtimeDateYear"></div></div>
-                        <br /><a id="MtimeHour"></a></td>
-                    <td><header>Michael Hazan</header></td>
-                    <td style="width:180px;">
-                        <%= loginMSG %>
-=======
                     <td style="text-align:center; margin:auto; width:120px;" class="MtimeDate">
                         <div id="Mdate"><div id="MtimeDateDay"></div>/<div id="MtimeDateMonth"></div>/<div id="MtimeDateYear"></div></div>
                         <br /><a id="MtimeHour"></a></td>
                     <td><header>Michael Hazan</header></td>
                     <td style="text-align:center;width:120px;">
                         
->>>>>>> c85844d5d2c7a484960054d3e9d07c767aef7764
                         <%if ((string)Session["uName"] == "guest") { %>
                         <div style="text-align:center;">
                             <a href="SignUp.aspx" class="MsignButton"> Sign Up </a>

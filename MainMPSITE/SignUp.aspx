@@ -2,13 +2,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
         .signupform{
+            font-family: 'Roboto', sans-serif;
             margin:auto; 
+            margin-top:20px;
             width:fit-content;
             color:deepskyblue;
             font-size:26px;
             text-align:center;
-            border-spacing: 5px 20px;
+            border-spacing: 5px 10px;
+            background: rgb(130,0,57);
+            background: radial-gradient(circle, rgba(130,0,57,0.7) 0%, rgba(0,58,125,0.7) 100%);
+            border-radius: 2px 4px;
         }
         .signupform input[type=submit] {
             width: 100%;
@@ -23,6 +30,7 @@
         }
         .signupform input[type=password], .signupform input[type=text]{
             width: 100%;
+            font-family: 'Lato', sans-serif;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -30,6 +38,9 @@
             border-radius: 4px;
             box-sizing: border-box;
             text-align:center;
+            font-size:18px;
+            background: rgb(255,231,242);
+            background: radial-gradient(circle, rgba(255,231,242,1) 0%, rgba(224,227,255,1) 100%);
         }
         select.yob {
             width:80px;
@@ -37,48 +48,58 @@
             font-size:24px;
             font-family: 'Roboto';
         }
+
+        .ErrMSG {
+            font-size:14px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form method="post" runat="server">
         <table class="signupform">
             <tr>
-                <td>Username:</td>
-                <td colspan=2><input type="text" name="uName" id="uName"  /></td>
+                <td></td>
+                <td colspan="2">Username:<br /><input type="text" name="uName" id="uName"  /></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td colspan=2><input type="text" name="Email" id="Email"  /></td>
-                <td><%= emailErr %></td>
+                <td colspan="10" class="ErrMSG"><%= uNameErr %></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td colspan=2><input type="text" name="password" id="password"  /></td>
+                <td></td>
+                <td colspan="2">Email:<br /><input type="text" name="Email" id="Email"  /></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Rewrite Password:</td>
-                <td colspan=2><input type="text" name="password" id="passwordcheck"  /></td>
+                <td colspan="10" class="ErrMSG"><%= emailErr %></td>
             </tr>
             <tr>
-                <td>First Name:</td>
-                <td><input type="text" name="userFName" id="userFName"  /></td>
-                <td>Last Name:</td>
-                <td><input type="text" name="userLName" id="userLname"  /></td>
-            </tr>   
+                <td></td>
+                <td >Password:<br /><input type="password" name="Password" id="Password"  /></td><td>Rewrite Password:<br /><input type="password" name="PasswordCheck" id="PasswordCheck"  /></td>
+            </tr>
             <tr>
-                <td >Year Of Birth:</td>
-                <td>
+                <td colspan="10" class="ErrMSG"><%= passErr %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">First Name:<br /><input type="text" name="userFName" id="userFName"  />Last Name:<br /><input type="text" name="userLName" id="userLname"  /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">Year Of Birth:
                     <select class="yob" name="yob" id="yob">
                         <%= yearOptions %>
                     </select>
                 </td>
-                
+                <td></td>
             </tr>
             <tr>
-                <td >Phone Number:</td>
-                <td colspan=2><input type="text" name="phonenumber" id="phonenumber"  /></td>
+                <td></td>
+                <td colspan="2">Phone Number:<br /><input type="text" name="phonenumber" id="phonenumber"  /></td>
+                <td></td>
             </tr>
-            <tr><td colspan="10"><input type="submit" name="submit" value="Submit"></td></tr>
+            <tr><td colspan="4"><input type="submit" name="submit" value="Submit"></td></tr>
         </table>
     </form>
 </asp:Content>

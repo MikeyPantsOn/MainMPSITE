@@ -4,11 +4,7 @@
     <script src="js/index.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<<<<<<< HEAD
     <div dir="ltr">
         <h2>Hello World!</h2>
     </div>
-=======
-    
->>>>>>> c85844d5d2c7a484960054d3e9d07c767aef7764
 </asp:Content>

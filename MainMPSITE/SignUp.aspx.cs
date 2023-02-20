@@ -21,36 +21,41 @@ namespace MainMPSITE
         protected void Page_Load(object sender, EventArgs e)
         {
             YearPlacement();
-            emailErr = Request.Form["submit"] + "1";
             if (Request.Form["submit"] != null)
             {
-
-                CheckSignUp(sender);
+                emailErr = "";
+                passErr = "";
+                uNameErr = "";
+                CheckSignUp();
             }
         }
 
-        private void CheckSignUp(object sender)
+        private void CheckSignUp()
         {
             string fileName = "UsersDB.mdf";
             string tableName = "UsersDB";
 
-            
+            string uName = Request.Form["uName"];
+            if (uName == null || uName.Length < 5 || Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Username = '{uName}'"))
+            { uNameErr = "Username is already used or too short."; return; }
 
             string email = Request.Form["Email"];
-            emailErr = email;
             if (email.IndexOf("@") == -1 || email.LastIndexOf(".") < email.IndexOf("@") || email.Length < 8 || email == null)
             { emailErr = "Problematic Email."; return; }
-            string uName = Request.Form["Username"];
-            if (uName == null || uName.Length < 5 || Helper.IsExist(fileName, $"SELECT * FROM {tableName} when username = {uName}"))
-            { uNameErr = "Username is already used or too short."; return; }
-            string pass = Request.Form["password"];
-            string passc = Request.Form["passwordcheck"];
+
+            if(Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Email = '{email}'"))
+            { emailErr = "Email Already Used!"; return; }
+
+            string pass = Request.Form["Password"];
+            string passc = Request.Form["PasswordCheck"];
             if (pass == null || pass.Length < 8 || pass != passc) { passErr = "Password too short or don't match."; return; }
 
             sqlInsert = $"INSERT INTO {tableName} ";
-            sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFName"]}' , '{Request.Form["userLName"]}' , '{email}' , '{Request.Form["gender"]}' , '{Request.Form["yob"]}'";
+            sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFName"]}' , '{Request.Form["userLName"]}' , '{email}' , '{Request.Form["gender"]}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}')";
 
             Helper.DoQuery(fileName, sqlInsert);
+
+            Response.Redirect("main.aspx");
             
         }
 
@@ -59,7 +64,7 @@ namespace MainMPSITE
             int year = DateTime.Now.Year;
             for (int i = 130; i > 0; i--)
             {
-                yearOptions += "<option value=\"yearOfBirth" + year + "\">" + year + "</option>";
+                yearOptions += "<option value=\"" + year + "\">" + year + "</option>";
                 year -= 1;
             }
         }
