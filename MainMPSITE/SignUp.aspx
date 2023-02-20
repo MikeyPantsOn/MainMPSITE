@@ -7,7 +7,7 @@
             width:fit-content;
             color:deepskyblue;
             font-size:26px;
-            text-align:right;
+            text-align:center;
             border-spacing: 5px 20px;
         }
         .signupform input[type=submit] {
@@ -40,15 +40,24 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form name="signupFrm" id="signupFrm" method="post" runat="server">
+    <form method="post" runat="server">
         <table class="signupform">
             <tr>
-                <td colspan=2>Username:</td>
+                <td>Username:</td>
                 <td colspan=2><input type="text" name="uName" id="uName"  /></td>
             </tr>
             <tr>
-                <td colspan=2>Password:</td>
+                <td>Email:</td>
+                <td colspan=2><input type="text" name="Email" id="Email"  /></td>
+                <td><%= emailErr %></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
                 <td colspan=2><input type="text" name="password" id="password"  /></td>
+            </tr>
+            <tr>
+                <td>Rewrite Password:</td>
+                <td colspan=2><input type="text" name="password" id="passwordcheck"  /></td>
             </tr>
             <tr>
                 <td>First Name:</td>
@@ -57,19 +66,19 @@
                 <td><input type="text" name="userLName" id="userLname"  /></td>
             </tr>   
             <tr>
-                <td colspan=2>Year Of Birth:</td>
+                <td >Year Of Birth:</td>
                 <td>
-                    <select class="yob" name="yearOfBirth" id="yob">
+                    <select class="yob" name="yob" id="yob">
                         <%= yearOptions %>
                     </select>
                 </td>
                 
             </tr>
             <tr>
-                <td colspan=2>Password:</td>
-                <td colspan=2><input type="text" name="password" id="password"  /></td>
+                <td >Phone Number:</td>
+                <td colspan=2><input type="text" name="phonenumber" id="phonenumber"  /></td>
             </tr>
-            
+            <tr><td colspan="10"><input type="submit" name="submit" value="Submit"></td></tr>
         </table>
     </form>
 </asp:Content>

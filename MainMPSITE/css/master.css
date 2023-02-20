@@ -4,6 +4,20 @@ html{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:cadetblue;
 }
+/* Element positioning */
+body, html {
+    margin: 0;
+    padding: 0;
+
+}
+
+svg {
+    width: 100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-10;
+}
 
 table.Mtable{
     margin:auto;
@@ -48,9 +62,9 @@ table.Mtable header {
     font-size:65px;
     color:indianred;
     text-align:center;
-    margin:auto;
+    
     user-select:none;
-    width:fit-content;
+    width:100%;
     transition: text-shadow 2s;
 }
 table.Mtable header:hover{
@@ -74,7 +88,7 @@ table.Mtable header:hover{
 }
 
 ul.MPagesList {
-  padding-left: 0px;
+  padding-left: -10px;
   
   text-align: center;
   margin:auto;

@@ -3,13 +3,12 @@
 h2 {
     block-size: fit-content;
     padding: 0.1%;
-    float: right;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: darkcyan;
-    text-align: right;
+    
     height: fit-content;
     margin: 0px 4px -4px 10px;
-    font-size: 26px
+    font-size: 46px
 }
 
 h3 {
