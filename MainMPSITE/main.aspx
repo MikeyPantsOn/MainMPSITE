@@ -4,7 +4,9 @@
     <script src="js/index.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div dir="ltr">
-        <h2>Hello World!</h2>
+    <div class="typewriter">
+        <div class="headercontainer">
+            <div class="header">Hello World!</div>
+        </div>
     </div>
 </asp:Content>

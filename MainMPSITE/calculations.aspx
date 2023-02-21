@@ -10,10 +10,9 @@
             <input type="number" id="calsAmount" class="calsAmount" />
         </div>
         <div id="badCalsAmount"></div>
-
         <div class="responsebutton" onclick="setCalsAmount()">Submit</div>
     </div>
-    <div class="mainbackground" id="mbg">
+    <div class="background" id="mbg">
         <div class="miniheader">
             please complete the calculations<br />(On division questions that dont round up, enter the 2 numbers after the dot, like 1.22 3.12 etc..)
         </div>

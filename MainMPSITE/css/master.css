@@ -1,19 +1,23 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 html{
     background: rgb(41, 41, 41);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:cadetblue;
+
 }
 /* Element positioning */
 body, html {
     margin: 0;
     padding: 0;
-
 }
+
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
     border-radius: 5px 4px;
     margin: 10px;
+    position:absolute;
 }
 ::-webkit-scrollbar-thumb {
     background: grey;
@@ -30,6 +34,7 @@ svg {
     left: 0;
     top: 0;
     z-index: -10;
+    height:120%;
 }
 
 table.Mtable{
@@ -76,19 +81,37 @@ table.Mtable{
 }
 
 table.Mtable header {
-    font-size:65px;
-    color:indianred;
-    text-align:center;
-    
-    user-select:none;
-    width:100%;
-    transition: text-shadow 2s;
+    font-size: 65px;
+    color: indianred;
+    text-align: center;
+    user-select: none;
+    width: fit-content;
+    margin:auto;
+    transition: transform 1s ease,text-shadow 1s ease;
+    text-shadow: 0 .125rem .25rem rgba(0,0,0,.5);
+    transition: transform 1s ease;
 }
-table.Mtable header:hover{
-    text-shadow: 4px 4px 2px blue, 8px 8px 3px pink;
+.pseudo-hover {
+    position: relative;
+}
+
+.pseudo-hover::after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    text-shadow: 0 .75rem 2rem -.5em rgba(0,0,0,1);
+    transition: opacity 1s ease;
+}
+.pseudo-hover:hover {
+  transform: translateY(-.15em) scale(1.06);
+}
+
+.pseudo-hover:hover::after {
+    opacity: 1;
     cursor:pointer;
 }
-td.MLogin {
+
+td.MSidePanels {
     text-align: center;
     width: 100px;
     background: rgb(2,0,36);
@@ -111,19 +134,21 @@ td.MLogin {
 
 }
 .MsignButton:hover {
-    box-shadow: rgba(0,0,0, 0.8) 3px 3px 10px;
+    box-shadow: rgba(0,0,0, 0.8) 0px 3px 10px;
+    transform: translateY(-.5em) scale(1.06);
     
 }
 
 ul.MPagesList {
-  padding-left: -10px;
-  
+  padding:0px;
   text-align: center;
-  margin:auto;
 }
 ul.MPagesList > li {
   display: inline-block;
   margin:10px;
+}
+ul.MPagesList > li.first{
+    margin-left:0px !important;
 }
 ul.MPagesList > li > a:hover {
   background-color: #2779BF;
@@ -137,5 +162,11 @@ ul.MPagesList > li > a {
     padding: 10px 20px;
     transition:background-color 1s;
     border-radius:3px 4px;
+
+}
+
+.MBody {
+    overflow-y: scroll;
+    height: 50em;
 
 }

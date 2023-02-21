@@ -57,8 +57,8 @@
             font-size:24px;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             line-height: 60px;
-            position:absolute;
             margin-left:10px;
+
         }
         select.yob option:hover {
             background: rgb(134, 134, 134);
@@ -104,7 +104,7 @@
             <tr>
                 <td></td>
                 <td colspan="2">Year Of Birth:
-                    <select class="yob" name="yob" id="yob" onmouseover="this.size=8;" onmouseout="this.size=0;" onclick="this.size=0;">
+                    <select class="yob" name="yob" id="yob">
                         <%= yearOptions %>
                     </select>
                 </td>
