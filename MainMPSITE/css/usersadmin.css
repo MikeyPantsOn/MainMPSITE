@@ -1,0 +1,41 @@
+﻿.usersbutton {
+    width: 100%;
+    font-size: 46px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 30px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color cubic-bezier(.75,.05,.51,1.06) 0.5s, color linear 0.5s;
+}
+
+.usersbutton:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+.background {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    margin-top: 80px;
+    width: 85%;
+    color: deepskyblue;
+    font-size: 26px;
+    text-align: center;
+    border-spacing: 5px 10px;
+    background: rgb(130,0,57);
+    background: radial-gradient(circle, rgba(130,0,57,0.65) 0%, rgba(0,58,125,0.2) 90%);
+    background-size: 100% 100%;
+    border-radius: 10px 4px;
+    padding: 20px 50px;
+    box-shadow: rgba(0,0,0, 0.4) 10px 10px 20px inset;
+}
+.background .header {
+    font-size: 56px;
+    font-weight:600;
+
+}
