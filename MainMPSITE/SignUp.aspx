@@ -37,13 +37,13 @@
             color: #4CAF50;
         }
         .signupform input[type=password], .signupform input[type=text]{
-            width: 100%;
+            width: 70%;
             font-family: 'Lato', sans-serif;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 6px;
             box-sizing: border-box;
             text-align:center;
             font-size:18px;
@@ -67,6 +67,27 @@
             font-size:14px;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            LoadInputs();
+        }, false);
+        function SaveInputs() {
+            localStorage.setItem("username", document.getElementById("uName").value);
+            localStorage.setItem("email", document.getElementById("Email").value);
+            localStorage.setItem("userfname", document.getElementById("userFname").value);
+            localStorage.setItem("userlname", document.getElementById("userLname").value);
+            localStorage.setItem("yob", document.getElementById("yob").value);
+            localStorage.setItem("phonenumber", document.getElementById("phonenumber").value);
+        }
+        function LoadInputs() {
+            document.getElementById("uName").value = localStorage.getItem("username");
+            document.getElementById("Email").value = localStorage.getItem("email");
+            document.getElementById("userFname").value = localStorage.getItem("userfname");
+            document.getElementById("userLname").value = localStorage.getItem("userlname");
+            document.getElementById("yob").value = localStorage.getItem("yob");
+            document.getElementById("phonenumber").value = localStorage.getItem("phonenumber");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form method="post" runat="server">
@@ -98,7 +119,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2">First Name:<br /><input type="text" name="userFName" id="userFName"  />Last Name:<br /><input type="text" name="userLName" id="userLname"  /></td>
+                <td colspan="2">First Name:<br /><input type="text" name="userFname" id="userFname"  /><br />Last Name:<br /><input type="text" name="userLname" id="userLname"  /></td>
                 <td></td>
             </tr>
             <tr>
@@ -115,7 +136,7 @@
                 <td colspan="2">Phone Number:<br /><input type="text" name="phonenumber" id="phonenumber"  /></td>
                 <td></td>
             </tr>
-            <tr><td colspan="4"><input type="submit" name="submit" value="Submit"></td></tr>
+            <tr><td colspan="4"><input type="submit" name="submit" onclick="SaveInputs()" value="Submit"></td></tr>
         </table>
     </form>
 </asp:Content>

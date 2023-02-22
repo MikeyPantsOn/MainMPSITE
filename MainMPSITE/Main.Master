@@ -53,8 +53,8 @@
         				}
         
         				.bottom-inner {
-        								transform-origin: 134px  222px;
-        								animation: rotate 20s linear infinite;
+        				    transform-origin: 134px  222px;
+        				    animation: rotate 20s linear infinite;
         				}
                 </style>
             </defs>
@@ -82,6 +82,11 @@
                         <%} else { %>
                             <%= loginMSG %>
                             <a href="SignOut.aspx" class="MsignButton"> Log Out </a>
+                                <br />
+                                <br />
+                            <%if ((bool)Session["admin"] == true) {  %>
+                                <a href="Admin.aspx" class="MsignButton"> Admin </a>
+                            <%} %>
                         <%} %>
                     </td>
                     <td style="width:40px;"></td>

@@ -34,7 +34,7 @@ svg {
     left: 0;
     top: 0;
     z-index: -10;
-    height:120%;
+    height:130%;
 }
 
 table.Mtable{
@@ -125,18 +125,21 @@ td.MSidePanels {
     font-size: 22px;
     cursor: pointer;
     user-select: none;
-    transition: box-shadow linear 0.3s;
+    transition: box-shadow linear 0.3s, transform linear 0.3s;
     text-align: center;
     border-radius: 3px 4px;
     text-decoration: none;
-    padding:1px;
+    padding:3px;
     color: rgba(255, 167, 245, 0.75);
 
 }
 .MsignButton:hover {
-    box-shadow: rgba(0,0,0, 0.8) 0px 3px 10px;
-    transform: translateY(-.5em) scale(1.06);
+    box-shadow: rgba(0,0,0, 0.8) 0px 3px 10px inset;
     
+}
+.MsignButton:active{
+    box-shadow: rgba(0,0,0, 0.8) 3px 10px 20px inset;
+
 }
 
 ul.MPagesList {
@@ -167,6 +170,6 @@ ul.MPagesList > li > a {
 
 .MBody {
     overflow-y: scroll;
-    height: 50em;
+    height: 90vh;
 
 }

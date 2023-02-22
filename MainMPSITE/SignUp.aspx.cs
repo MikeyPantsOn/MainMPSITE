@@ -50,14 +50,19 @@ namespace MainMPSITE
             string passc = Request.Form["PasswordCheck"];
             if (pass == null || pass.Length < 8 || pass != passc) { passErr = "Password too short or don't match."; return; }
 
+            char admin = 'F';
+            if (Helper.ExecuteDataTable(fileName, $"SELECT * FROM {tableName}").Rows.Count == 0) admin = 'T';
+
             sqlInsert = $"INSERT INTO {tableName} ";
-            sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFName"]}' , '{Request.Form["userLName"]}' , '{email}' , " +
-                $"'{Request.Form["gender"]}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}', 'F')";
+            sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFname"]}' , '{Request.Form["userLname"]}' , '{email}' , " +
+                $"'{Request.Form["gender"]}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}', '{admin}')";
 
             Helper.DoQuery(fileName, sqlInsert);
 
             Session["uName"] = uName;
             Session["userFName"] = Request.Form["userFName"];
+            Session["admin"] = admin == 'T';
+
             Response.Redirect("main.aspx");
             
 

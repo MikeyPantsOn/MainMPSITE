@@ -30,18 +30,19 @@ namespace MainMPSITE
                     if (table.Rows.Count == 0)
                     {
                         Response.Redirect("SignIn.aspx");
-                        msg = "No Users Signed Up!";
+                        msg = "No Users\nSigned Up!";
                     }
                     else
                     {
                         Session["uName"] = uName;
                         Session["userFName"] = table.Rows[0]["FirstName"];
+                        Session["admin"] = (string)table.Rows[0]["Admin"] == "T";
                         Response.Redirect("main.aspx");
                     }
                 }
                 else
                 {
-                    msg = "Username Or Password Are Incorrect!";
+                    msg = "Username Or\nPassword Are Incorrect!";
                 }
             }
         }

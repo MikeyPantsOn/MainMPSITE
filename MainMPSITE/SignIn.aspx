@@ -13,7 +13,7 @@
             background: rgb(130,0,57);
             background: radial-gradient(circle, rgba(130,0,57,0.95) 0%, rgba(0,58,125,0.2) 90%);
             background-size: 100% 100%;
-            border-radius: 2px 4px;
+            border-radius: 4px 8px;
             padding:20px;
             box-shadow: rgba(0,0,0, 0.4) 10px 10px 20px inset;
         }
@@ -24,7 +24,7 @@
             padding: 14px 20px;
             margin: 8px 0;
             border: none;
-            border-radius: 4px;
+            border-radius: 12px;
             cursor: pointer;
             text-align:center;
             transition: background-color cubic-bezier(.75,.05,.51,1.06) 0.5s, color linear 0.5s;
@@ -41,6 +41,12 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+        }
+        .ErrMSG {
+            font-size: 16px;
+            width:fit-content;
+            text-align:center;
+
         }
     </style>
     <script>
@@ -64,6 +70,7 @@
             <div>Password: </div>
             <div><input type="password" name="pw" id="pw" placeholder="Password"  /></div>
             <br />
+            <div class="ErrMSG"><%= msg %></div>
             <div>
                 <input type="submit" name="submit" value="Login" />
             </div>
