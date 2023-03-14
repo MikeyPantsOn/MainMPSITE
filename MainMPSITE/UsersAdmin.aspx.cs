@@ -11,6 +11,7 @@ namespace MainMPSITE
 {
     public partial class UsersAdmin : System.Web.UI.Page
     {
+        public string strdebug = "";
         public string sqlrequest = "";
         public string userList = "";
         string filename = "UsersDB.mdf";
@@ -35,8 +36,16 @@ namespace MainMPSITE
         }
         private void sqlRequests()
         {
+            string str = Request.Form["so"].Substring(0, Request.Form["so"].LastIndexOf(','));
+            strdebug = $"{str.Contains("all")} {str}";
+            Console.Write(str);
+            if(str == "Admin") sqlrequest = $"SELECT * FROM {tablename} WHERE Admin = \'{Request.Form["admin"]}\'";
+            else if (str == "Gender") sqlrequest = $"SELECT * FROM {tablename} WHERE Gender = \'{Request.Form["gender"]}\'";   
+            else if (str == null || Request.Form["soallsearch"] == "" || str.Contains("all"))
+                sqlrequest = $"SELECT * FROM {tablename}";
+            else sqlrequest = $"SELECT * FROM {tablename} WHERE {char.ToUpper(str[0]) + str.Substring(1)} = \'{Request.Form["soallsearch"]}\'";
 
-            if () sqlrequest = $"SELECT * FROM {tablename}";
+
         }
     }
 }

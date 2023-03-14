@@ -6,68 +6,128 @@
             document.getElementById(x.id + "Info").classList.toggle('expand');
         }
         var so = document.getElementById("so");
+        window.addEventListener('load', function () {
+            LoadInfo();
+            document.getElementById("so").addEventListener("change", function () {
+                var so = document.getElementById("so");
+                if (so.value == "Admin") {
+                    document.getElementById("soadmin").style.display = "block";
+                    document.getElementById("sogender").style.display = "none";
+                    document.getElementById("soyearborn").style.display = "none";
+                    document.getElementById("soall").style.display = "none";
+                }
+                else if (so.value == "Gender") {
+                    console.log("gender");
+                    document.getElementById("soadmin").style.display = "none";
+                    document.getElementById("sogender").style.display = "block";
+                    document.getElementById("soyearborn").style.display = "none";
+                    document.getElementById("soall").style.display = "none";
+                }
+                else if (so.value == "yearBorn") {
+                    document.getElementById("soadmin").style.display = "none";
+                    document.getElementById("sogender").style.display = "none";
+                    document.getElementById("soyearborn").style.display = "block";
+                    document.getElementById("soall").style.display = "none";
+                }
+                else if (so.value == "all") {
+                    document.getElementById("soadmin").style.display = "none";
+                    document.getElementById("sogender").style.display = "none";
+                    document.getElementById("soyearborn").style.display = "none";
+                    document.getElementById("soall").style.display = "none";
+                }
+                else {
+                    document.getElementById("soadmin").style.display = "none";
+                    document.getElementById("sogender").style.display = "none";
+                    document.getElementById("soyearborn").style.display = "none";
+                    document.getElementById("soall").style.display = "block";
+                }
+            });
 
-        document.getElementById("so").addEventListener("change", function(){
-            if (so.value == "admin") {
-                document.getElementById("soadmin").display = block;
-                document.getElementById("sogender").display = none;
-                document.getElementById("soall").display = none;
-            }
-            if (so.value == "gender") {
-                document.getElementById("soadmin").display = none;
-                document.getElementById("sogender").display = block;
-                document.getElementById("soall").display = none;
-            }
-            else {
-                document.getElementById("soadmin").display = none;
-                document.getElementById("sogender").display = none;
-                document.getElementById("soall").display = block;
-            }
         });
+        function SaveInfo() {
+            var so = document.getElementById("so");
+            localStorage.setItem("so",so.value);
+            if(so.value == "Gender") localStorage.setItem("gender", document.getElementById("sogender").value);
+            else if(so.value == "Admin") localStorage.setItem("admin", document.getElementById("soadmin").value);
+            else if(so.value == "yearBorn") localStorage.setItem("yearborn", document.getElementById("soyearborn").value);
+            else  localStorage.setItem("all", document.getElementById("soallsearch").value);
+        }
+        function LoadInfo() {
+            if (localStorage.getItem("so") == null) return;
+            document.getElementById("so").value = localStorage.getItem("so");
+            var so = document.getElementById("so");
+
+
+
+            if (so.value == "Gender") {
+                document.getElementById("gender").value = localStorage.getItem("gender");
+                document.getElementById("sogender").style.display = "block";
+                document.getElementById("soall").style.display = "none";
+            }
+            else if (so.value == "Admin") {
+                document.getElementById("admin").value = localStorage.getItem("admin");
+                document.getElementById("soadmin").style.display = "block";
+                document.getElementById("soall").style.display = "none";
+            }
+            else if (so.value == "yearBorn") {
+                document.getElementById("yearBorn").value = localStorage.getItem("yearborn");
+                document.getElementById("soyearborn").style.display = "block";
+                document.getElementById("soall").style.display = "none";
+            }
+            else document.getElementById("soallsearch").value = localStorage.getItem("all");
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="background">
         <div class="header">Users</div>
         <div class="header"><%= sqlrequest %></div>
-        <form method="post" runat="server">
+        <form method="post" runat="server" class="adminsearch">
              <select class="so" name="so" id="so">
                  <option value="all">All</option>
                  <optgroup label="Names">
-                     <option value="username">Username</option>
-                     <option value="firstname">First Name</option>
-                     <option value="lastname">Last Name</option>
+                     <option value="Username" selected="selected">Username</option>
+                     <option value="FirstName">First Name</option>
+                     <option value="LastName">Last Name</option>
                  </optgroup>
                  <optgroup label="Personal">
-                     <option value="gender">Gender</option>
-                     <option value="phone">Phone Number</option>
+                     <option value="Gender">Gender</option>
+                     <option value="Phone">Phone Number</option>
+                     <option value="yearBorn">Year Of Birth</option>
                  </optgroup>
                  <optgroup label="Security">
-                     <option value="email">Email</option>
-                     <option value="pass">Password</option>
-                     <option value="admin">Admin</option>
+                     <option value="Email">Email</option>
+                     <option value="Pass">Password</option>
+                     <option value="Admin">Admin</option>
                  </optgroup>
-             </select>
-            <div style="font-size:20px;">
-                <input type="radio" id="m" name="gender" value="m" checked>
-                <label for="male">Male</label>
-                <input type="radio" id="f" name="gender" value="f">
-                <label for="female">Female</label>
+             </select><br />
+            <div id="soall" style="font-size:20px;">
+                <input type="text" name="soallsearch" id="soallsearch"  />
             </div>
+            <div id="sogender" style="font-size:20px; display:none;">
+                <input type="radio" id="m" name="gender" value="m" checked>
+                <label for="m">Male</label>
+                <input type="radio" id="f" name="gender" value="f">
+                <label for="f">Female</label>
+            </div>
+            <div id="soadmin" style="font-size:20px; display:none;">
+                <input type="radio" id="True" name="admin" value="T" checked>
+                <label for="True">Is Admin</label>
+                <input type="radio" id="False" name="admin" value="F">
+                <label for="False">Is Not Admin</label>
+            </div>
+            <div id="soyearborn" style="font-size:20px; display:none;">
+                <select class="so" name="so" id="yearborn">
+                 <option value="all">All</option>
+                    </select>
+            </div>
+            <input type="submit" name="submit" onclick="SaveInfo()" value="Submit">
         </form>
         <br />
         <div>
             <%= userList %>
-            <div>
-                <button onclick="openInfo(this);" id="test" class="usersbutton">Test</button>
-                <div id="testInfo" class="userInfo smalldesc">
-                    <table class="tUsers">
-                    <tr><td>First Name</td><td>Last Name</td><td>Email</td><td>Gender</td><td>Year Of Birth</td><td>Phone Number</td><td>Password</td><td>Is Admin?</td></tr>
-                    <tr><td>Test-FNAME</td><td>Test-LNAME</td><td>Test-Email</td><td>Test-Email</td><td>Test-yearBorn</td><td>Test-Phone</td><td>Test-Pass</td><td>Test-Admin</td></tr>
-                    </table>
-                </div>
-
-            </div>
+            <%= strdebug %>
+            
 
         </div>
     </div>
