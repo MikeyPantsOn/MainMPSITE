@@ -81,10 +81,12 @@ table.Mtable{
 }
 
 table.Mtable header {
+
     font-size: 65px;
     color: indianred;
     text-align: center;
     user-select: none;
+    font-weight: 600;
     width: fit-content;
     margin:auto;
     transition: transform 1s ease,text-shadow 1s ease;
@@ -173,3 +175,5 @@ ul.MPagesList > li > a {
     height: 90vh;
 
 }
+
+

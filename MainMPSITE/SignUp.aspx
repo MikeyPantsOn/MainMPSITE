@@ -3,9 +3,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
         .signupform{
-            font-family: 'Roboto', sans-serif;
-
+            font-family: 'Montserrat', sans-serif;
+            font-weight:600;
+            letter-spacing: 1px;
             margin:auto; 
             margin-top:20px;
             width:fit-content;

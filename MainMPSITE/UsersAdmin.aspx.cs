@@ -23,7 +23,7 @@ namespace MainMPSITE
                 userList += $"<div>" +
                     $"<button onclick=\"openInfo(this);\" id=\"{table.Rows[i]["Username"]}\" class=\"userInfoButton\">{table.Rows[i]["Username"]}</button>" +
                     $"<div id=\"{table.Rows[i]["Username"]}Info\" class=\"userInfo\">" +
-                    $"" +
+                    $"<div ></div>" +
                     $"</div>" +
                     $"</div>";
             }
