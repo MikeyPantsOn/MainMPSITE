@@ -124,6 +124,11 @@
             </tr>
             <tr>
                 <td></td>
+                <td colspan="2">Phone Number:<br /><input type="text" name="phonenumber" id="phonenumber"  /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
                 <td colspan="2">Year Of Birth:
                     <select class="yob" name="yob" id="yob">
                         <%= yearOptions %>
@@ -133,7 +138,14 @@
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2">Phone Number:<br /><input type="text" name="phonenumber" id="phonenumber"  /></td>
+                <td colspan="2">Gender:
+                    <div style="font-size:20px;">
+                        <input type="radio" id="male" name="gender" value="male" checked>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </td>
                 <td></td>
             </tr>
             <tr><td colspan="4"><input type="submit" name="submit" onclick="SaveInputs()" value="Submit"></td></tr>
