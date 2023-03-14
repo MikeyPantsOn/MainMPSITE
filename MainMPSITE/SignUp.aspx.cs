@@ -52,10 +52,13 @@ namespace MainMPSITE
 
             char admin = 'F';
             if (Helper.ExecuteDataTable(fileName, $"SELECT * FROM {tableName}").Rows.Count == 0) admin = 'T';
+            char gender;
+            if (Request.Form["gender"] == "female") gender = 'F';
+            else gender = 'M';
 
             sqlInsert = $"INSERT INTO {tableName} ";
             sqlInsert += $"VALUES ('{uName}' , '{Request.Form["userFname"]}' , '{Request.Form["userLname"]}' , '{email}' , " +
-                $"'{Request.Form["gender"]}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}', '{admin}')";
+                $"'{gender}' , '{Request.Form["yob"]}', '{Request.Form["phonenumber"]}', '{pass}', '{admin}')";
 
             Helper.DoQuery(fileName, sqlInsert);
 

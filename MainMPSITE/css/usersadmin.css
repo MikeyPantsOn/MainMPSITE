@@ -39,3 +39,16 @@
     font-weight:600;
 
 }
+.smalldesc {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .3s;
+}
+
+.smalldesc.expand {
+    max-height: 250px;
+}
+table.tUsers{
+    border-spacing:20px;
+    background: radial-gradient(to top left, #ff0083, #ff6a00);
+}
