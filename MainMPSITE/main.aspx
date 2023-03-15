@@ -9,4 +9,5 @@
             <div class="header">Hello World!</div>
         </div>
     </div>
+    <div class="info"></div>
 </asp:Content>

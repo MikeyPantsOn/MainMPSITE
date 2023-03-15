@@ -46,7 +46,10 @@
         });
         function SaveInfo() {
             var so = document.getElementById("so");
-            localStorage.setItem("so",so.value);
+
+            localStorage.setItem("so", so.value);
+            localStorage.setItem("editmode", document.getElementById("EditMode").checked);
+
             if(so.value == "Gender") localStorage.setItem("gender", document.getElementById("sogender").value);
             else if(so.value == "Admin") localStorage.setItem("admin", document.getElementById("soadmin").value);
             else if(so.value == "yearBorn") localStorage.setItem("yearborn", document.getElementById("soyearborn").value);
@@ -55,9 +58,9 @@
         function LoadInfo() {
             if (localStorage.getItem("so") == null) return;
             document.getElementById("so").value = localStorage.getItem("so");
+            document.getElementById("EditMode").checked = (localStorage.getItem("editmode").toLowerCase() === 'true');
+
             var so = document.getElementById("so");
-
-
 
             if (so.value == "Gender") {
                 document.getElementById("gender").value = localStorage.getItem("gender");
@@ -76,6 +79,7 @@
             }
             else document.getElementById("soallsearch").value = localStorage.getItem("all");
         }
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -102,7 +106,7 @@
                  </optgroup>
              </select><br />
             <div id="soall" style="font-size:20px;">
-                <input type="text" name="soallsearch" id="soallsearch"  />
+                <input type="text" name="soallsearch" id="soallsearch" />
             </div>
             <div id="sogender" style="font-size:20px; display:none;">
                 <input type="radio" id="m" name="gender" value="m" checked>
@@ -121,14 +125,21 @@
                  <option value="all">All</option>
                     </select>
             </div>
+            <div id="editmode" style="font-size:20px;">
+                <input type="checkbox" id="EditMode" name="editmode" value="EditMode">
+                <label for="EditMode">Enable Edit Mode</label>
+            </div>
             <input type="submit" name="submit" onclick="SaveInfo()" value="Submit">
-        </form>
+            <br />
+            <%if (Request.Form["EditMode"] != null)
+                {  %>
+            <input type= "submit" name= "submitchanges" onclick= "SaveInfo()" value= "Apply Edits">
+            <%} %>
         <br />
         <div>
             <%= userList %>
             <%= strdebug %>
-            
-
         </div>
+        </form>
     </div>
 </asp:Content>
