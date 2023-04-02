@@ -29,7 +29,6 @@
     border-spacing: 5px 10px;
     background: rgb(130,0,57);
     background: radial-gradient(circle, rgba(130,0,57,0.65) 0%, rgba(0,58,125,0.2) 90%);
-    background-size: 100% 100%;
     border-radius: 10px 4px;
     padding: 20px 50px;
     box-shadow: rgba(0,0,0, 0.4) 10px 10px 20px inset;
@@ -52,6 +51,7 @@ table.tUsers {
     border-spacing: 20px;
     background: radial-gradient(to top left, #ff0083, #ff6a00);
     width: 100%;
+
 }
 table.tUsers tr td {
     margin:auto;
@@ -71,11 +71,12 @@ table.tUsers tr td {
     transition: background-color cubic-bezier(.75,.05,.51,1.06) 0.5s, color linear 0.5s;
     margin:8px;
 }
+
 .adminsearch input[type=submit]:hover {
     background-color: white;
     color: #4CAF50;
 }
-.adminsearch input[type=password], .adminsearch input[type=text] {
+.adminsearch input[type=password], .adminsearch input[type=text].mainsearch {
     width: 30%;
     font-family: 'Lato', sans-serif;
     padding: 12px 20px;
@@ -97,4 +98,33 @@ select.so {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 60px;
     margin: 8px;
+}
+select.yob {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 60px;
+    margin: 8px;
+}
+
+
+
+.inputchange {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    padding: 12px 20px;
+    margin: auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    background: rgb(255,231,242);
+    background: radial-gradient(circle, rgba(255,231,242,1) 0%, rgba(224,227,255,1) 100%);
+    margin: 8px;
+}
+.radioinput{
+    font-size:15px;
 }

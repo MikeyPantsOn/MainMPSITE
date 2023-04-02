@@ -156,16 +156,17 @@ ul.MPagesList > li.first{
     margin-left:0px !important;
 }
 ul.MPagesList > li > a:hover {
-  background-color: #2779BF;
+  background-color: #008aff40;
+  box-shadow: inset #000000ac 4px 4px;
   cursor:pointer;
 }
 ul.MPagesList > li > a {
     user-select:none;
-    background-color: #3D99CE;
+    background-color: transparent;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    transition:background-color 1s;
+    transition:background-color 1s, box-shadow 1s;
     border-radius:3px 4px;
 
 }

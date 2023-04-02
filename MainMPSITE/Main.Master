@@ -71,7 +71,7 @@
                     <td class="MSidePanels">
                         <div id="Mdate"><div id="MtimeDateDay"></div>/<div id="MtimeDateMonth"></div>/<div id="MtimeDateYear"></div></div>
                         <br /><a id="MtimeHour"></a></td>
-                    <td><header class="pseudo-hover">Michael<br /> Hazan</header></td>
+                    <td><header class="pseudo-hover">Michael<br />Hazan</header></td>
                     <td class="MSidePanels">
                         <%if ((string)Session["uName"] == "guest") { %>
                         <div style="text-align:center;">
@@ -100,12 +100,12 @@
                         </ul>
                 </td></tr>
                 <tr>
-                    <td colspan="5" class="MBody" style="margin:auto; overflow-y: scroll;">
+                    <td colspan="7" class="MBody" style="margin:auto; overflow-y: scroll;">
                         <div class="MBody">
                         
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
-                            </div>
+                        </div>
                         
                     </td>
     

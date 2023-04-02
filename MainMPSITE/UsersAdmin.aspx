@@ -106,7 +106,7 @@
                  </optgroup>
              </select><br />
             <div id="soall" style="font-size:20px;">
-                <input type="text" name="soallsearch" id="soallsearch" />
+                <input class="mainsearch" type="text" name="soallsearch" id="soallsearch" />
             </div>
             <div id="sogender" style="font-size:20px; display:none;">
                 <input type="radio" id="m" name="gender" value="m" checked>

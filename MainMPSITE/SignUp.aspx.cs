@@ -1,11 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using System;
 
 namespace MainMPSITE
 {
@@ -36,19 +29,30 @@ namespace MainMPSITE
             string tableName = "UsersDB";
 
             string uName = Request.Form["uName"];
-            if (uName == null || uName.Length < 5 || Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Username = '{uName}'"))
-            { uNameErr = "Username is already used or too short."; return; }
+            if (Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Username = '{uName}'"))
+            { uNameErr = "Username is already used."; return; }
+
+            if (uName == null || uName.Length < 5)
+            { uNameErr = "Username is Too Short."; return; }
 
             string email = Request.Form["Email"];
-            if (email.IndexOf("@") == -1 || email.LastIndexOf(".") < email.IndexOf("@") || email.Length < 8 || email == null)
-            { emailErr = "Problematic Email."; return; }
+            if(email.IndexOf("@") == -1)
+            { emailErr = "Missing @."; return; }
+            if(email.LastIndexOf(".") < email.IndexOf("@"))
+            { emailErr = "Missing Email Domain. (gmail.com, yahoo.com etc..)"; return; }
+
+            if (email.Length < 8 || email == null)
+            { emailErr = "Email Too Short."; return; }
 
             if(Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Email = '{email}'"))
             { emailErr = "Email Already Used!"; return; }
 
             string pass = Request.Form["Password"];
             string passc = Request.Form["PasswordCheck"];
-            if (pass == null || pass.Length < 8 || pass != passc) { passErr = "Password too short or don't match."; return; }
+            if (pass == null || pass.Length < 8) 
+            { passErr = "Password too short."; return; }
+            if(pass != passc) 
+            { passErr = "Passwords Don't Match."; return; }
 
             char admin = 'F';
             if (Helper.ExecuteDataTable(fileName, $"SELECT * FROM {tableName}").Rows.Count == 0) admin = 'T';
