@@ -1,19 +1,13 @@
 ﻿window.onload = function () {
 
-    setImages();
-}
-
-function setImages() {
-    var pnstring = localStorage.getItem('Animals');
-    var picturesNames = JSON.parse(pnstring);
-    console.log(typeof picturesNames);
-    var elems = document.getElementsByClassName("tdata");
-    console.log(elems.length);
-    for (var i = 0; i < elems.length; i++) {
-        elems[i].src = "../images/" + picturesNames[i] + ".png";
-        console.log("../images/" + picturesNames[i] + ".png");
+    var x = document.getElementsByClassName("tdata");
+    for (var i = 0; i < x.length; i++) {
+        console.log(x[i].src);
+        x[i].addEventListener("click", function () { moveToPage(x[i]); });
     }
 }
+
+
 
 function setMainImage(x) {
     var obj = document.getElementById("mainImage");
@@ -22,6 +16,7 @@ function setMainImage(x) {
 
 function moveToPage(x) {
     var src = x.src;
-    var which = src.substring(src.lastIndexOf("/")+1, src.lastIndexOf("."));
-    document.location.href = `https://en.wikipedia.org/wiki/${which}`;
+    var which = src.substring(src.lastIndexOf("/") + 1, src.lastIndexOf("."));
+    console.log(which);
+    document.location.href = `./${which}`;
 }

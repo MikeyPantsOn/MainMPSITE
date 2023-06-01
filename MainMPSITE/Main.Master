@@ -23,7 +23,7 @@
         </script>
         
         <link href="css/master.css" rel="stylesheet" />
-        <title>What is this?</title>
+        <title>False = True</title>
         <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
     </head>
@@ -71,7 +71,9 @@
                     <td class="MSidePanels">
                         <div id="Mdate"><div id="MtimeDateDay"></div>/<div id="MtimeDateMonth"></div>/<div id="MtimeDateYear"></div></div>
                         <br /><a id="MtimeHour"></a></td>
-                    <td><header class="pseudo-hover">Michael<br />Hazan</header></td>
+                    <td><header class="pseudo-hover">
+                        Michael<br />Hazan
+                        </header></td>
                     <td class="MSidePanels">
                         <%if ((string)Session["uName"] == "guest") { %>
                         <div style="text-align:center;">
@@ -93,10 +95,10 @@
                 </tr>
                 <tr><td colspan="5" style="margin:auto;">
                         <ul class="MPagesList">
-                            <li class="first"><a href="main.aspx">Home</a></li>
-                            <li><a href="calculations.aspx">Calculate</a></li>
-                            <li><a href="hoursTable.aspx">Hours Table</a></li>
-                            <li><a href="imageTable.aspx">Images</a></li>
+                            <li class="first"><a href="./main.aspx">Home</a></li>
+                            <li><a href="./calculations.aspx">Calculate</a></li>
+                            <li><a href="./hoursTable.aspx">Hours Table</a></li>
+                            <li><a href="./imageTable.aspx">Images</a></li>
                         </ul>
                 </td></tr>
                 <tr>

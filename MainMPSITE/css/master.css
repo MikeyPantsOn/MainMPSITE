@@ -84,7 +84,7 @@ table.Mtable{
 }
 
 table.Mtable header {
-
+    content: 'Michael Hazan';
     font-size: 65px;
     color: indianred;
     text-align: center;
@@ -96,6 +96,7 @@ table.Mtable header {
     text-shadow: 0 .125rem .25rem rgba(0,0,0,.5);
     transition: transform 1s ease;
 }
+
 .pseudo-hover {
     position: relative;
 }
@@ -177,7 +178,7 @@ ul.MPagesList > li > a {
 
 .MBody {
     overflow-y: scroll;
-    height: 90vh;
+    height: 92vh;
 
 }
 

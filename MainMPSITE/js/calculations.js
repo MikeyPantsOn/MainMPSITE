@@ -13,8 +13,13 @@ function load() {
     document.getElementById("calculations").innerHTML = "";
     document.getElementById("calsAmount").value = calculationsAmount;
 
+    signatures = [];
+    currentSignature = 0;
+    calculationsAnswers = [];
+
     placeCalculations();
     placeNumbers();
+    console.log(signatures);
 
 }
 
@@ -48,19 +53,22 @@ function placeNumbers() {
         if (num1 > num2) {
             document.getElementById(`cal${i}1`).value = num1;
             document.getElementById(`cal${i}2`).value = num2;
+            calculateAnswers(num1, num2, i)
         } else {
             document.getElementById(`cal${i}1`).value = num2;
             document.getElementById(`cal${i}2`).value = num1;
+            calculateAnswers(num2, num1, i)
         }
-        calculateAnswers(num1, num2, i)
+        
     }
 }
 
 function calculateAnswers(x, y, i) {
-    if (signatures[i] == "+") (calculationsAnswers[i] = x + y);
-    if (signatures[i] == "-") (calculationsAnswers[i] = x - y);
-    if (signatures[i] == "*") (calculationsAnswers[i] = x * y);
-    if (signatures[i] == "/") (calculationsAnswers[i] = x / y).toFixed(2);
+    if (signatures[i] == "+") calculationsAnswers[i] = x + y;
+    if (signatures[i] == "-") calculationsAnswers[i] = x - y;
+    if (signatures[i] == "*") calculationsAnswers[i] = x * y;
+    if (signatures[i] == "/") calculationsAnswers[i] = (x / y).toFixed(2);
+
 }
 
 
@@ -72,8 +80,7 @@ function checkAnswers() {
             res.innerHTML = `Please write an answer`;
             continue;
         }
-        console.log(22 / 1);
-        if (answer.value == calculationsAnswers[i]) res.innerHTML = "Correct!";
+        if (answer.value == calculationsAnswers[i] || calculationsAnswers[i] - answer.value == 0) res.innerHTML = "Correct!";
         else res.innerHTML = `Wrong by ${calculationsAnswers[i] - answer.value}`;
     }
 }
@@ -81,7 +88,6 @@ function checkAnswers() {
 
 function getSignature() {
     var rand = Math.random() * 4;
-
     if (rand <= 1) { signatures[currentSignature] = "+"; return "+"; }
     if (rand <= 2) { signatures[currentSignature] = "-"; return "-"; }
     if (rand <= 3) { signatures[currentSignature] = "*"; return "*"; }

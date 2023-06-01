@@ -1,22 +1,26 @@
-﻿table, tr, td {
-    border: 3px solid red;
+﻿table.images, table.images tr, table.images tr td {
+  
     text-align: center;
     border-spacing: 0px;
 }
 
-table {
+table.images {
     border: 0px;
     margin: auto;
     width: 55%;
     height: 500px;
 }
 
-tr {
+table.images tr {
     margin: 0px;
     padding: 0px;
 }
 
 img.tdata {
     display: block;
-    width: 100%;
+    width: 250px;
+    margin:auto;
+}
+#mainImage {
+    width: 300px;
 }
