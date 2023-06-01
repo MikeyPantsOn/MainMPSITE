@@ -3,13 +3,13 @@
     -webkit-background-clip: text;
     background-clip: text;
     background: rgb(5,91,0);
-    background: linear-gradient(48deg, rgba(5,91,0,1) 6%, rgba(20,121,9,1) 48%, rgba(69,173,0,1) 100%);
+    background: linear-gradient(48deg, #b60080 6%, #ca008e 48%, #de009c 100%);
     width: fit-content;
     background-size: contain;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    align-content:center;
+    align-content: center;
 }
 .typewriter .headercontainer{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -27,6 +27,7 @@
     color: red;
     text-align:center;
     margin:auto;
+    font-weight: 900;
 }
 
 
