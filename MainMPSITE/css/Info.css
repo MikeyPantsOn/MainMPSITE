@@ -1,0 +1,42 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+.info {
+    font-family: 'Inter', sans-serif;
+    margin:auto;
+    width:70%;
+}
+.image {
+    text-align: center;
+    text-shadow: rgb(255, 0, 0) 10px 10px;
+    margin:auto;
+    margin-bottom:20px;
+    width: min-content;
+}
+.mainimg {
+    border-radius: 6px 3px;
+}
+
+.title {
+    font-family: 'Eczar', serif;
+    font-size:55px;
+}
+.textbackground {
+    background: rgba(0, 0, 0, 255);
+    border-radius: 6px 3px;
+    mix-blend-mode: exclusion;
+    padding: 12px;
+    transition: background-color ease-in-out 0.4s;
+
+}
+.text{
+    mix-blend-mode:normal;
+    font-size:25px;
+}
+.textbackground:hover{
+    background-color:white;
+    mix-blend-mode: normal;
+}
+.textbackground:hover .text {
+    mix-blend-mode: exclusion;
+}

@@ -7,7 +7,8 @@
             margin-top:20px;
             width:fit-content;
             color:deepskyblue;
-            font-size:26px;
+            font-size:32px;
+            font-weight: 700;
             text-align:center;
             border-spacing: 5px 10px;
             background: rgb(130,0,57);

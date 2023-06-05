@@ -1,15 +1,18 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+
 .headercontainer {
     -webkit-background-clip: text;
     background-clip: text;
     background: rgb(5,91,0);
-    background: linear-gradient(48deg, rgba(5,91,0,1) 6%, rgba(20,121,9,1) 48%, rgba(69,173,0,1) 100%);
+    background: linear-gradient(48deg, #b60080 6%, #ca008e 48%, #de009c 100%);
     width: fit-content;
     background-size: contain;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    align-content:center;
+    align-content: center;
 }
 .typewriter .headercontainer{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -17,7 +20,7 @@
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .50em; /* Adjust as needed */
-    animation: typing 2s steps(100, end), blink-caret .75s step-end infinite;
+    animation: typing 0.5s steps(100, end), blink-caret .75s step-end infinite;
     
 }
 
@@ -27,6 +30,7 @@
     color: red;
     text-align:center;
     margin:auto;
+    font-weight: 900;
 }
 
 
@@ -38,7 +42,7 @@
     }
 
     to {
-        width: 100%;
+        width: 540px;
     }
 }
 
@@ -51,6 +55,53 @@
     50% {
         border-color: white;
     }
+}
+
+
+
+
+.info {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    width: 90%;
+    margin: auto;
+    transition: background-color ease-in-out 0.4s;
+    border-radius: 6px 3px;
+}
+.info .title {
+    font-family: 'Eczar', serif;
+    font-size: 55px;
+    
+}
+.info .subtitle {
+    font-family: 'Eczar', serif;
+    font-size: 35px;
+    
+}
+.info .text {
+    max-height:0;
+    overflow:hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    padding: 5px;
+}
+.info:hover{
+    background-color:white;
+    mix-blend-mode: normal;
+}
+.info:hover .text {
+    mix-blend-mode: exclusion;
+    max-height:100%;
+    opacity:1;
+    
+}
+
+.info .text a {
+    cursor:pointer;
+    user-select:none;
+    font-size:15px;
+    text-decoration:none;
+    color:rgb(255, 129, 129);
 }
 
 

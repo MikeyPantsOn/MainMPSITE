@@ -59,16 +59,19 @@ table.Mtable{
 }
 
 #MtimeDateYear {
-    color: aquamarine;
+    font-weight: 600;
+    color: rgb(68 0 121);
     display: inline-block;
 }
 #MtimeDateMonth {
-    color: aquamarine;
+    font-weight: 600;
+    color: rgb(68 0 121);
     display: inline-block;
 }
 #MtimeDateDay {
-    color: aquamarine;
-    display:inline-block;
+    font-weight: 600;
+    color: rgb(68 0 121);
+    display: inline-block;
 }
 #Mdate {
     color: mediumpurple;
@@ -76,12 +79,12 @@ table.Mtable{
     overflow: hidden;
 
 }
-#MtimeHour{
-    color:blanchedalmond;
+#MtimeHour {
+    color: rgb(68 0 121);
 }
 
 table.Mtable header {
-
+    content: 'Michael Hazan';
     font-size: 65px;
     color: indianred;
     text-align: center;
@@ -93,6 +96,7 @@ table.Mtable header {
     text-shadow: 0 .125rem .25rem rgba(0,0,0,.5);
     transition: transform 1s ease;
 }
+
 .pseudo-hover {
     position: relative;
 }
@@ -131,49 +135,50 @@ td.MSidePanels {
     text-align: center;
     border-radius: 3px 4px;
     text-decoration: none;
-    padding:3px;
+    padding:8px;
     color: rgba(255, 167, 245, 0.75);
 
 }
 .MsignButton:hover {
     box-shadow: rgba(0,0,0, 0.8) 0px 3px 10px inset;
-    
 }
 .MsignButton:active{
     box-shadow: rgba(0,0,0, 0.8) 3px 10px 20px inset;
-
 }
 
 ul.MPagesList {
-  padding:0px;
-  text-align: center;
+    margin: 40px;
+    padding:0px;
+    text-align: center;
 }
 ul.MPagesList > li {
-  display: inline-block;
-  margin:10px;
+    display: inline-block;
+    margin:10px;
 }
 ul.MPagesList > li.first{
     margin-left:0px !important;
 }
 ul.MPagesList > li > a:hover {
-  background-color: #008aff40;
-  box-shadow: inset #000000ac 4px 4px;
-  cursor:pointer;
+    background-color: #263d5628;
+    box-shadow: inset #000000ac 4px 4px;
+    cursor:pointer;
 }
 ul.MPagesList > li > a {
     user-select:none;
     background-color: transparent;
-    color: white;
+    font-size: 22px;
+    color: mediumpurple;
     text-decoration: none;
     padding: 10px 20px;
     transition:background-color 1s, box-shadow 1s;
     border-radius:3px 4px;
+    font-weight:600;
 
 }
 
 .MBody {
     overflow-y: scroll;
-    height: 90vh;
+    height: 92vh;
 
 }
 

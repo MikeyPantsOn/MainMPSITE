@@ -89,6 +89,23 @@
     <Content Include="css\usersadmin.css" />
     <Content Include="css\admin.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\Crocodile.png" />
+    <Content Include="images\Pinocchio.png" />
+    <Content Include="images\TheCard.png" />
+    <Content Include="images\TheLiar.png" />
+    <Content Include="images\Theseus.png" />
+    <Content Include="images\Bootstrap.png" />
+    <Content Include="images\Grandfather.png" />
+    <Content Include="images\AchillesAndTheTortoise.png" />
+    <Content Include="Crocodile.aspx" />
+    <Content Include="TheLiar.aspx" />
+    <Content Include="Pinocchio.aspx" />
+    <Content Include="TheCard.aspx" />
+    <Content Include="Theseus.aspx" />
+    <Content Include="Grandfather.aspx" />
+    <Content Include="Bootstrap.aspx" />
+    <Content Include="AchillesAndTheTortoise.aspx" />
+    <Content Include="css\Info.css" />
     <Content Include="js\calculations.js" />
     <Content Include="css\calculations.css" />
     <Content Include="css\hoursTable.css" />
@@ -140,6 +157,62 @@
     </Compile>
     <Compile Include="imageTable.aspx.designer.cs">
       <DependentUpon>imageTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crocodile.aspx.cs">
+      <DependentUpon>Crocodile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crocodile.aspx.designer.cs">
+      <DependentUpon>Crocodile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TheLiar.aspx.cs">
+      <DependentUpon>TheLiar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TheLiar.aspx.designer.cs">
+      <DependentUpon>TheLiar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pinocchio.aspx.cs">
+      <DependentUpon>Pinocchio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pinocchio.aspx.designer.cs">
+      <DependentUpon>Pinocchio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TheCard.aspx.cs">
+      <DependentUpon>TheCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TheCard.aspx.designer.cs">
+      <DependentUpon>TheCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Theseus.aspx.cs">
+      <DependentUpon>Theseus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Theseus.aspx.designer.cs">
+      <DependentUpon>Theseus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grandfather.aspx.cs">
+      <DependentUpon>Grandfather.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grandfather.aspx.designer.cs">
+      <DependentUpon>Grandfather.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap.aspx.cs">
+      <DependentUpon>Bootstrap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap.aspx.designer.cs">
+      <DependentUpon>Bootstrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AchillesAndTheTortoise.aspx.cs">
+      <DependentUpon>AchillesAndTheTortoise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AchillesAndTheTortoise.aspx.designer.cs">
+      <DependentUpon>AchillesAndTheTortoise.aspx</DependentUpon>
     </Compile>
     <Compile Include="main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
