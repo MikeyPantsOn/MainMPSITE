@@ -58,7 +58,7 @@ namespace MainMPSITE
                         $"<td><input class=\"inputchange\" type=\"text\" name=\"{table.Rows[i]["Username"]}LName\" id=\"{table.Rows[i]["Username"]}LName\" value=\"{table.Rows[i]["LastName"]}\" /></td>" +
                         $"<td><input class=\"inputchange\" type=\"text\" name=\"{table.Rows[i]["Username"]}Email\" id=\"{table.Rows[i]["Username"]}Email\" value=\"{table.Rows[i]["Email"]}\" /></td>" +
                         $"{gendercheck}" +
-                        $"<td><select class=\"yob\" name=\"{table.Rows[i]["Username"]}yob\" id=\"{table.Rows[i]["Username"]}yob\"  value=\"{table.Rows[i]["yearBorn"]}\">{YearPlacement()}</select></td>" +
+                        $"<td><select class=\"yob\" name=\"{table.Rows[i]["Username"]}yob\" id=\"{table.Rows[i]["Username"]}yob\" value=\"{table.Rows[i]["yearBorn"]}\">{YearPlacement(int.Parse(table.Rows[i]["yearBorn"].ToString()))}</select></td>" +
                         $"<td><input class=\"inputchange\" type=\"text\" name=\"{table.Rows[i]["Username"]}Phone\" id=\"{table.Rows[i]["Username"]}Phone\" value=\"{table.Rows[i]["Phone"]}\" /></td>" +
                         $"<td><input class=\"inputchange\" type=\"text\" name=\"{table.Rows[i]["Username"]}Pass\" id=\"{table.Rows[i]["Username"]}Pass\" value=\"{table.Rows[i]["Pass"]}\" /></td>" +
                         $"{admincheck}" +
@@ -107,9 +107,9 @@ namespace MainMPSITE
             else sqlrequest = $"SELECT * FROM {tablename} WHERE {char.ToUpper(str[0]) + str.Substring(1)} = \'{Request.Form["soallsearch"]}\'";
 
         }
-        private string YearPlacement()
+        private string YearPlacement(int mainyear)
         {
-            string yearOptions = "";
+            string yearOptions = "<option value=\"" + mainyear + "\">" + mainyear + "</option>";
             int year = DateTime.Now.Year;
             for (int i = 130; i > 0; i--)
             {

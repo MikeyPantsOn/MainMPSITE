@@ -15,8 +15,12 @@ function setMainImage(x) {
 }
 
 function moveToPage(x) {
-    var src = x.src;
-    var which = src.substring(src.lastIndexOf("/") + 1, src.lastIndexOf("."));
-    console.log(which);
-    document.location.href = `./${which}`;
+    if (x != null) {
+        var src = x.src;
+        var which = src.substring(src.lastIndexOf("/") + 1, src.lastIndexOf("."));
+        console.log(x.src.substring(src.lastIndexOf("/") + 1, src.lastIndexOf(".")));
+        document.getElementById("page").value = which;
+        document.getElementById("imageForm").submit();
+
+    }
 }

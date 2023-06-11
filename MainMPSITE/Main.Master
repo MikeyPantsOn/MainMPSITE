@@ -98,7 +98,8 @@
                             <li class="first"><a href="./main.aspx">Home</a></li>
                             <li><a href="./calculations.aspx">Calculate</a></li>
                             <li><a href="./hoursTable.aspx">Hours Table</a></li>
-                            <li><a href="./imageTable.aspx">Images</a></li>
+                            <%if (Session["uName"].ToString() != "guest")
+                                {  %><li><a href="./imageTable.aspx">Images</a></li><%} %>
                         </ul>
                 </td></tr>
                 <tr>

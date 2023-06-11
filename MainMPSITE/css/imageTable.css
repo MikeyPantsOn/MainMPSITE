@@ -24,3 +24,15 @@ img.tdata {
 #mainImage {
     width: 300px;
 }
+
+#page{
+    background-color:transparent;
+    border:none;
+    color:transparent;
+}
+
+.noaccess {
+    font-family: 'Eczar', serif;
+    font-size: 75px;
+    text-align:center;
+}

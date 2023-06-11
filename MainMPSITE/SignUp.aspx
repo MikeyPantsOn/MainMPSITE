@@ -89,6 +89,7 @@
             document.getElementById("yob").value = localStorage.getItem("yob");
             document.getElementById("phonenumber").value = localStorage.getItem("phonenumber");
         }
+        
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -132,7 +133,7 @@
             <tr>
                 <td></td>
                 <td colspan="2">Year Of Birth:
-                    <select class="yob" name="yob" id="yob">
+                    <select AutoPostBack="True" class="yob" name="yob" id="yob">
                         <%= yearOptions %>
                     </select>
                 </td>

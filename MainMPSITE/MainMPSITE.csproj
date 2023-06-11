@@ -121,6 +121,7 @@
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="UsersAdmin.aspx" />
+    <Content Include="UsersInfo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +257,13 @@
     </Compile>
     <Compile Include="UsersAdmin.aspx.designer.cs">
       <DependentUpon>UsersAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsersInfo.aspx.cs">
+      <DependentUpon>UsersInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersInfo.aspx.designer.cs">
+      <DependentUpon>UsersInfo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

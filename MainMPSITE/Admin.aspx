@@ -3,11 +3,9 @@
     <link href="css/admin.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%//if ((bool)Session["admin"]) {%>
-        <div class="background">
-            <input type="submit" id="Users" class="pagesbutton" value="Users" />
-            
-
-        </div>
-    <%//}else Response.Redirect("main.aspx");%>
+    <%if (!(bool)Session["admin"]) Response.Redirect("./main.aspx"); %>
+    <div class="background">
+        <a href="UsersAdmin.aspx" class="pagesbutton" value="Users" >Users</a>
+        <a href="UsersInfo.aspx" class="pagesbutton" value="UsersInfo" >Users Info</a>
+    </div>
 </asp:Content>

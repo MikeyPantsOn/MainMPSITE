@@ -83,6 +83,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <%if (!(bool)Session["admin"]) Response.Redirect("./main.aspx"); %>
     <div class="background">
         <div class="header">Users</div>
         <div class="header"><%= sqlrequest %></div>

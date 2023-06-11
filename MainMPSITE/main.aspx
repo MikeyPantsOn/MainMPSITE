@@ -1,9 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="mpSite.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/index.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+            ClearInputs();
+        };
+        function ClearInputs() {
+            console.log(localStorage.getItem("email") + "hello");
+            localStorage.removeItem("email");
+            localStorage.removeItem("userfname");
+            localStorage.removeItem("username");
+            localStorage.removeItem("userlname");
+            localStorage.removeItem("yob");
+            localStorage.removeItem("phonenumber");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="typewriter">
+    <div onload="ClearInputs()" class="typewriter">
         <div class="headercontainer">
             <div class="header">PARDOXES</div>
         </div>

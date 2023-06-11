@@ -11,10 +11,7 @@ namespace MainMPSITE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Form["submit"] != null)
-            {
-                if (Request.Form["submit"] == "Users") Response.Redirect("UsersAdmin.aspx");
-            }
+
         }
     }
 }
