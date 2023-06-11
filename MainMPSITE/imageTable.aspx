@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%if (Session["uName"].ToString() != "guest")
         {%>
-            <%=msg %>
             <form name="imageForm" id="imageForm" method="post" runat="server" UseSubmitBehaviour="true">
                 <table class="images" style="margin-top:2%;" dir="ltr">
                     <tr>

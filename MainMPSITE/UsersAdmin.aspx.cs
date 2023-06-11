@@ -97,7 +97,7 @@ namespace MainMPSITE
             else if (str == "Gender") sqlrequest = $"SELECT * FROM {tablename} WHERE Gender = \'{Request.Form["gender"]}\'";   
             else if (str == null || Request.Form["soallsearch"] == "" || str.Contains("all"))
                 sqlrequest = $"SELECT * FROM {tablename}";
-            else sqlrequest = $"SELECT * FROM {tablename} WHERE {char.ToUpper(str[0]) + str.Substring(1)} = \'{Request.Form["soallsearch"]}\'";
+            else sqlrequest = $"SELECT * FROM {tablename} WHERE {char.ToUpper(str[0]) + str.Substring(1)} LIKE \'%\' + \'{Request.Form["soallsearch"]}\' + '%'";
 
         }
         private string YearPlacement(int mainyear)

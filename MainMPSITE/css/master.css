@@ -34,7 +34,7 @@ svg {
     left: 0;
     top: 0;
     z-index: -10;
-    height:130%;
+    height:160%;
 }
 
 table.Mtable{
@@ -178,7 +178,7 @@ ul.MPagesList > li > a {
 
 .MBody {
     overflow-y: scroll;
-    height: 92vh;
+    height: 110vh;
 
 }
 
