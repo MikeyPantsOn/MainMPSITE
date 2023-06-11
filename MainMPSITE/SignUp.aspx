@@ -126,6 +126,9 @@
                 <td></td>
             </tr>
             <tr>
+                <td colspan="10" class="ErrMSG"><%= pNameErr %></td>
+            </tr>
+            <tr>
                 <td></td>
                 <td colspan="2">Phone Number:<br /><input type="text" name="phonenumber" id="phonenumber"  /></td>
                 <td></td>

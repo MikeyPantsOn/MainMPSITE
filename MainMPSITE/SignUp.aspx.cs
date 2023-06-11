@@ -9,6 +9,7 @@ namespace MainMPSITE
 
         public string emailErr;
         public string uNameErr;
+        public string pNameErr;
         public string passErr;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -29,11 +30,18 @@ namespace MainMPSITE
             string tableName = "UsersDB";
 
             string uName = Request.Form["uName"];
-            if (Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Username = '{uName}'"))
-            { uNameErr = "Username is already used."; return; }
 
             if (uName == null || uName.Length < 5)
             { uNameErr = "Username is Too Short."; return; }
+
+            if (Helper.IsExist(fileName, $"SELECT * FROM {tableName} WHERE Username = '{uName}'"))
+            { uNameErr = "Username is already used."; return; }
+
+            string pfName = Request.Form["userFname"];
+            string plName = Request.Form["userLname"];
+            if ((pfName == null || pfName.Length < 2) || (plName == null || plName.Length < 2))
+            { uNameErr = "Please Write a Proper First And Last Name."; return; }
+
 
             string email = Request.Form["Email"];
             if(email.IndexOf("@") == -1)
